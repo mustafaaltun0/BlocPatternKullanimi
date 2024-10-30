@@ -12,7 +12,6 @@ class Anasayfa extends StatefulWidget {
 class _AnasayfaState extends State<Anasayfa> {
   var tfSayi1 = TextEditingController();
   var tfSayi2 = TextEditingController();
-  int sonuc = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +21,7 @@ class _AnasayfaState extends State<Anasayfa> {
           padding: const EdgeInsets.only(left: 50,right: 50),
           child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              BlocBuilder<AnasayfaCubit,int>(//Dinleme
+              BlocBuilder<AnasayfaCubit,int>(//Dinleme yapısı
                 builder: (context,sonuc){
                   return Text(sonuc.toString(),style: const TextStyle(fontSize: 50),);
                 },
@@ -37,6 +36,13 @@ class _AnasayfaState extends State<Anasayfa> {
                   ElevatedButton(onPressed: (){
                     context.read<AnasayfaCubit>().carpmaYap(tfSayi1.text, tfSayi2.text);
                   }, child: const Text("Çarpma"))
+                ],
+              ),
+              Row(
+                children: [
+                  ElevatedButton(onPressed: (){
+                   
+                  }, child: const Text("ornek")),
                 ],
               )
             ],
