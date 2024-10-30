@@ -37,13 +37,6 @@ class _AnasayfaState extends State<Anasayfa> {
                     context.read<AnasayfaCubit>().carpmaYap(tfSayi1.text, tfSayi2.text);
                   }, child: const Text("Çarpma"))
                 ],
-              ),
-              Row(
-                children: [
-                  ElevatedButton(onPressed: (){
-                   
-                  }, child: const Text("ornek")),
-                ],
               )
             ],
           ),
